@@ -1,0 +1,30 @@
+=== Incident Report — Preliminary Notes ===
+
+At 03:14 UTC, multiple authentication attempts were detected from host 192.168.1.44.
+However, further logs show a connection from 256.14.22.5 — this is probably a malformed IP.
+
+The phishing email referenced a domain: secure-update-login.com
+—but another weird one appeared in chat logs: paypa1-verification.net
+(Jury is still out on whether it's a typo or intentional.)
+
+Contact reported receiving an email from: support@my-company.org
+But also "notify@@service...com" which is clearly invalid.
+
+--- Log Snippet ---
+[WARN] Failed login for user admin from 10.0.4.23 at 2025-11-29T07:21:03Z
+[INFO] DNS query: intranet.local returned NXDOMAIN
+[DEBUG] Possible C2 traffic to hxxp://malware-control-panel.biz (defanged)
+
+Random bytes: af39f112-9c2d-4b71 :: NOTE: ignore test@example,com and 33.44.55.666
+
+We also saw these during packet capture:
+- suspicious-domain: backup-data-sync.co
+- maybe? danger..zone
+- IP candidates: 172.20.10.5, 98.12.300.20, 45.77.88.101
+
+TODO: investigate email "john.doe@operations" (missing TLD)
+Analyst note: marketing.team@company.co.uk seems legitimate.
+
+--- Code Fragment ---
+print("Connecting to server at 192.168.0.999")  # invalid, ignore
+endpoint = "payments.api.service.com"
