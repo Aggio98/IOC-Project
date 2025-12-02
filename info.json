@@ -1,0 +1,24 @@
+{
+    "ips": [
+        "45.77.88.101",
+        "10.0.4.23",
+        "192.168.1.44",
+        "172.20.10.5"
+    ],
+    "domains": [
+        "intranet.local",
+        "my-company.org",
+        "payments.api.service.com",
+        "malware-control-panel.biz",
+        "backup-data-sync.co",
+        "secure-update-login.com",
+        "paypa1-verification.net",
+        "john.doe",
+        "marketing.team",
+        "company.co.uk"
+    ],
+    "emails": [
+        "support@my-company.org",
+        "marketing.team@company.co.uk"
+    ]
+}
