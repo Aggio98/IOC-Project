@@ -1,4 +1,5 @@
 import re
+import ipaddress
 
 with open("file.txt", "r") as file:
     data = file.read()
@@ -12,3 +13,12 @@ ip_pattern = r'\b(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.|$)){4}\b'
 emails = re.findall(email_pattern, data)
 domains = re.findall(domain_pattern, data)
 ips = re.findall(ip_pattern, data)
+
+#Find out which ipaddresses are valid in order to add them to a json file
+valid_ips = []
+for ip in ips:
+    try:
+        ipaddress.IPv4Address(ip)
+        valid_ips.append(ip)
+    except ipaddress.AddressValueError:
+        pass
