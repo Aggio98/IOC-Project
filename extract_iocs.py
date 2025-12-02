@@ -24,6 +24,7 @@ for ip in ips:
     except ipaddress.AddressValueError:
         pass
 
+#This makes sure to not add duplicates into json
 emails = list(set(emails))
 domains = list(set(domains))
 valid_ips = list(set(valid_ips))
@@ -34,5 +35,6 @@ json_data = {
     "emails": emails
 }
 
+#Create the json file
 with open("info.json", "w") as outfile:
     json.dump(json_data, outfile, indent=4)
